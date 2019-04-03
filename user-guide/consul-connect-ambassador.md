@@ -101,10 +101,19 @@ spec:
     spec:
       containers:
       - name: qotm
-        image: datawire/qotm:1.2
+        image: datawire/qotm:1.6
         ports:
         - name: http-api
           containerPort: 5000
+        env:
+        - name: CONSUL_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
         readinessProbe:
           httpGet:
             path: /health

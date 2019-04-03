@@ -170,7 +170,7 @@ services:
     # don't try to watch Kubernetes for configuration changes
     - AMBASSADOR_NO_KUBEWATCH=no_kubewatch
   qotm:
-    image: datawire/qotm:1.3
+    image: datawire/qotm:%qotmVersion%
     ports:
     - 5000
 ```
@@ -257,7 +257,7 @@ services:
     # don't try to watch Kubernetes for configuration changes
     - AMBASSADOR_NO_KUBEWATCH=no_kubewatch
   qotm:
-    image: datawire/qotm:1.3
+    image: datawire/qotm:%qotmVersion%
     ports:
     - 5000
   auth:
@@ -345,7 +345,7 @@ services:
     # don't try to watch Kubernetes for configuration changes
     - AMBASSADOR_NO_KUBEWATCH=no_kubewatch
   qotm:
-    image: datawire/qotm:1.3
+    image: datawire/qotm:%qotmVersion%
     ports:
     - 5000
   auth:
